@@ -1,0 +1,436 @@
+{
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "type": "object",
+  "properties": {
+    "database_connections": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "rdbms": {
+              "type": "string",
+              "enum": [
+                "postgresql",
+                "sqlite",
+                "mssql",
+                "mysql",
+                "oracle"
+              ]
+            }
+          },
+          "required": [
+            "rdbms"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "rdbms": {
+                    "const": "postgresql"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "host": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  },
+                  "db_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user",
+                  "password",
+                  "host",
+                  "port",
+                  "db_name"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "rdbms": {
+                    "const": "sqlite"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "file_path": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "file_path"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "rdbms": {
+                    "const": "mssql"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "host": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  },
+                  "db_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user",
+                  "password",
+                  "host",
+                  "port",
+                  "db_name"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "rdbms": {
+                    "const": "mysql"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "host": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  },
+                  "db_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user",
+                  "password",
+                  "host",
+                  "port",
+                  "db_name"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "rdbms": {
+                    "const": "oracle"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "user": {
+                    "type": "string"
+                  },
+                  "password": {
+                    "type": "string"
+                  },
+                  "host": {
+                    "type": "string"
+                  },
+                  "port": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  },
+                  "db_name": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "user",
+                  "password",
+                  "host",
+                  "port",
+                  "db_name"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "tools": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "long_name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string",
+              "minLength": 1
+            },
+            "type": {
+              "type": "string",
+              "enum": [
+                "executable",
+                "api"
+              ]
+            }
+          },
+          "required": [
+            "long_name",
+            "type"
+          ],
+          "allOf": [
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "executable"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "command": {
+                    "type": "string",
+                    "pattern": ".*"
+                  },
+                  "optional_properties": {
+                    "type": "object"
+                  },
+                  "cli_options": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "name": {
+                          "type": "string"
+                        },
+                        "type": {
+                          "type": "string",
+                          "enum": [
+                            "string",
+                            "int",
+                            "float",
+                            "bool",
+                            "list"
+                          ]
+                        },
+                        "required": {
+                          "type": "boolean"
+                        },
+                        "help": {
+                          "type": "string"
+                        },
+                        "choices": {
+                          "type": "array",
+                          "items": {
+                            "type": "string"
+                          }
+                        }
+                      },
+                      "required": [
+                        "name",
+                        "type"
+                      ]
+                    }
+                  }
+                },
+                "required": [
+                  "command"
+                ]
+              }
+            },
+            {
+              "if": {
+                "properties": {
+                  "type": {
+                    "const": "api"
+                  }
+                }
+              },
+              "then": {
+                "properties": {
+                  "url": {
+                    "type": "string",
+                    "format": "uri"
+                  },
+                  "port": {
+                    "type": "integer",
+                    "minimum": 1,
+                    "maximum": 65535
+                  },
+                  "authentication_type": {
+                    "type": "string"
+                  }
+                },
+                "required": [
+                  "url",
+                  "port",
+                  "authentication_type"
+                ]
+              }
+            }
+          ]
+        }
+      }
+    },
+    "logging_profiles": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "long_name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            },
+            "config": {
+              "type": "object"
+            }
+          },
+          "required": [
+            "long_name",
+            "config"
+          ]
+        }
+      }
+    },
+    "profiles": {
+      "type": "object",
+      "properties": {
+        "databases": {
+          "type": "object",
+          "properties": {
+            "olap": {
+              "type": "string"
+            },
+            "oltp": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "olap",
+            "oltp"
+          ]
+        },
+        "tools": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "reports": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "logging_profile": {
+          "type": "string"
+        },
+        "paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      },
+      "required": [
+        "databases",
+        "reports",
+        "logging_profile"
+      ]
+    },
+    "reports": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "report_type": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "report_type"
+          ],
+          "additionalProperties": true
+        }
+      }
+    },
+    "paths": {
+      "type": "object",
+      "patternProperties": {
+        "^[a-zA-Z0-9_]+$": {
+          "type": "object",
+          "properties": {
+            "path": {
+              "type": "string",
+              "pattern": ".*"
+            },
+            "long_name": {
+              "type": "string"
+            },
+            "description": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "path",
+            "long_name"
+          ]
+        }
+      }
+    }
+  },
+  "required": [
+    "database_connections",
+    "tools",
+    "logging_profiles",
+    "profiles",
+    "reports",
+    "paths"
+  ]
+}

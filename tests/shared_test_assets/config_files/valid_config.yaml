@@ -1,0 +1,46 @@
+database_connections:
+  default_connection:
+    rdbms: "postgresql"
+    user: "dbuser"
+    password: "dbpass"
+    host: "localhost"
+    port: 5432
+    db_name: "mydatabase"
+
+tools:
+  my_tool:
+    long_name: "My Awesome Tool"
+    description: "This tool does amazing things."
+    type: "executable"
+    command: "/path/to/command"
+    cli_options:
+      - name: "option1"
+        type: "string"
+        required: false
+        help: "Option 1 description"
+      - name: "flag"
+        type: "bool"
+        required: false
+
+logging_profiles:
+  standard_logging:
+    long_name: "Standard Logging"
+    description: "Default logging profile."
+    config: {}
+
+profiles:
+  databases:
+    olap: "olap_connection"
+    oltp: "oltp_connection"
+  tools: ["my_tool"]
+  logging: "standard_logging"
+
+reports:
+  sales_report:
+    report_type: "monthly"
+
+paths:
+  config_directory:
+    path: "/etc/myapp/config"
+    long_name: "Configuration Directory"
+    description: "Directory where configuration files are stored."

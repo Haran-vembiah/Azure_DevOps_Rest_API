@@ -1,0 +1,61 @@
+{
+  "database_connections": {
+    "local_postgres": {
+      "rdbms": "postgresql",
+      "user": "postgres",
+      "password": "postgres",
+      "host": "localhost",
+      "port": 14432,
+      "db_name": "orion_taf"
+    }
+  },
+  "tools": {
+    "squish_server": {
+      "long_name": "Squish Server",
+      "description": "This is the Squish server.",
+      "type": "executable",
+      "command": "%SQUISH_DIR%/bin/squishserver.exe",
+      "cli_options": [
+        {
+          "name": "--port",
+          "type": "int",
+          "required": true,
+          "help": "The port where the Squish server will listen for connections."
+        }
+      ]
+    }
+  },
+  "logging_profiles": {
+    "standard_logging": {
+      "long_name": "Standard Logging",
+      "description": "Default logging profile.",
+      "config": {}
+    }
+  },
+  "profiles": {
+    "databases": {
+      "olap": "local_postgres",
+      "oltp": "local_postgres"
+    },
+    "tools": [
+      "squish_server"
+    ],
+    "logging": "standard_logging"
+  },
+  "reports": {
+    "ci_report": {
+      "report_type": "static",
+        "output_format": "html",
+        "template_engine": "jinja2",
+      "template": "modbas_cicd_report_main.jinja2",
+      "template_directory": "assets/report/templates/cicd/html"
+    }
+  },
+  "paths": {
+    "log_root": {
+      "path": "logs",
+      "long_name": "Default log output directory.",
+      "description": "The parent directory where all log files will be written to."
+    }
+  }
+}

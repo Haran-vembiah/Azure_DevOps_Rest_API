@@ -1,0 +1,481 @@
+    <style>
+        /* Generic Stuff - MT/TAF-specific */
+
+        /* Using variables to simplify modifications in the color scheme
+        https://developer.mozilla.org/en-US/docs/Web/CSS/Using_CSS_custom_properties */
+        :root {
+            --req-item-color: #ff7800;
+            --backlog-color: #0078d4;
+            --req-color: #43d362;
+            --failed-test-color: #de4a4a;
+            --passed-test-color: #a9cf91;
+            --blocked-test-color: #d9d9d9;
+        }
+
+        h1 {
+            color: #5e6163;
+        }
+
+/* Removed 1 from here */
+
+        /*
+            This CSS code is from  https://codepen.io/markcaron/pen/MvGRYV
+        */
+        /* CSS for the main interaction */
+        .tabset > input[type="radio"] {
+            position: absolute;
+            left: -200vw;
+        }
+
+        .tabset .tab-panel {
+            display: none;
+        }
+
+        .tabset > input:first-child:checked ~ .tab-panels > .tab-panel:first-child,
+        .tabset > input:nth-child(3):checked ~ .tab-panels > .tab-panel:nth-child(2),
+        .tabset > input:nth-child(5):checked ~ .tab-panels > .tab-panel:nth-child(3),
+        .tabset > input:nth-child(7):checked ~ .tab-panels > .tab-panel:nth-child(4),
+        .tabset > input:nth-child(9):checked ~ .tab-panels > .tab-panel:nth-child(5),
+        .tabset > input:nth-child(11):checked ~ .tab-panels > .tab-panel:nth-child(6) {
+            display: block;
+        }
+
+        /*
+         Styling
+        */
+        body {
+            font: 16px/1.5em "Overpass", "Open Sans", Helvetica, sans-serif;
+            font-weight: 300;
+        }
+
+        .tabset > label {
+            position: relative;
+            display: inline-block;
+            padding: 2px 8px 4px;
+            border: 1px solid transparent;
+            border-top-left-radius: 8px;
+            border-top-right-radius: 8px;
+            border-bottom: 0;
+            cursor: pointer;
+            font-weight: 600;
+            background: #83b8ea;
+            color: #ffffff;
+        }
+
+        .tabset > label:hover {
+            color: #efefef;
+        }
+
+        .tabset > input:focus + label {
+            color: #FFFFFF;
+        }
+
+        .tabset > label:hover {
+            background: #61a1dd;
+        }
+
+        .tabset > label:hover::after,
+        .tabset > input:focus + label::after,
+        .tabset > input:checked + label::after {
+            background: #61a1dd;
+        }
+
+        .tabset > input:checked + label {
+            border-color: #cccccc;
+            border-bottom: 1px solid #fff;
+            margin-bottom: -1px;
+            background: #0078D4;
+        }
+
+        .tab-panel {
+            padding: 15px 0px 0px 35px;;
+            border-top: 1px solid #ccc;
+        }
+
+        .tab-panel > h2 {
+            color: #808284;
+        }
+
+        /*
+         Demo purposes only
+        */
+        *,
+        *:before,
+        *:after {
+            box-sizing: border-box;
+        }
+
+        .tabset {
+            max-width: 85em;
+            /*width: 100%;*/
+        }
+
+        .mt_logo {
+            float: right;
+        }
+
+        /*********************************************************************************************/
+        /* ORIGINAL Accordion CSS from https://supfort.com/pure-css-accordion-without-javascript*/
+        /* Modified with class names to prevent collisions with Tab CSS */
+        .accordion-input {
+            display: none;
+        }
+
+
+        .accordion-label {
+            color: #5e6163;
+            display: block;
+            padding: 0px 0px;
+            margin: 0 0 2px 0;
+            cursor: pointer;
+            font-weight: normal;
+            background: #FFFFFF;
+            border-radius: 6px;
+            transition: ease .5s;
+            position: relative;
+        }
+
+
+        .accordion-label-bl {
+            border: #0078D4 solid 1px;
+            /*color: #0078D4;*/
+        }
+
+        .accordion-label-re {
+            /*color: #43d362;*/
+            border: #43d362 solid 1px;
+        }
+        /* Requirement Item label */
+        .accordion-label-ri {
+            /*color: var(--req-item-color, #ff7800);*/
+            /*color: #5e6163;*/
+            border: var(--req-item-color, #ff7800) solid 1px;
+        }
+
+
+        .wi-id-box {
+            border-top-left-radius: 5px;
+            border-bottom-left-radius: 5px;
+            margin-right: 2px;
+            padding-left: 1px;
+            padding-top: 1px;
+            padding-bottom: 1px;
+            padding-right: 15px;
+            display: inline-block;
+            font-weight: bold;
+            text-align: right;
+        }
+
+
+        .wi-id-box-bl {
+            background-color: #0078D4;
+            color: #FFFFFF;
+            width: 8em;
+        }
+
+        .wi-id-box-re {
+            background-color: #43d362;
+            color: #FFFFFF;
+            width: 7em;
+        }
+        /* Requirement Item ID Box*/
+        .wi-id-box-ri {
+            background-color: var(--req-item-color, #ff7800);
+            color: #FFFFFF;
+            width: 6em;
+        }
+
+        .accordion-label:hover {
+            background: linear-gradient(0deg, rgba(205, 205, 205, 1) 0%, rgba(255, 255, 255, 1) 50%);
+            /*background: radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(175,175,175,1) 100%);*/
+        }
+
+
+        .accordion-label-ri + .tooltiptext { /* This is for the tooltip text */
+            visibility: hidden;
+            color: black;
+            box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.5);
+            -webkit-box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+            -moz-box-shadow: 5px 5px rgba(0, 0, 0, 0.5);
+            background: #FFFFAA;
+            border: 1px solid #FFAD33;
+            text-align: center;
+            padding: 10px;
+            border-radius: 10px; /* This defines tooltip text position */
+            position: absolute;
+            z-index: 1;
+        }
+
+
+        .accordion-label-ri:hover + .tooltiptext { /* Makes tooltip text visible when text is hovered on */
+            visibility: visible;
+            cursor: help;
+            transform: translateY(6px);
+        }
+
+
+
+        .tooltiptext::after {
+            content: " ";
+            width: 0;
+            height: 0;
+            border-style: solid;
+            border-width: 12px 12.5px 0 12.5px;
+            border-color: #FFAD33 transparent transparent transparent;
+            position: absolute;
+            top: -27%;
+            left: 1em;
+            transform: rotate(180deg);
+        }
+
+        .accordion_content {
+            background: #FFFFFF;
+            padding: 0px 0px 5px 1em;
+            margin-left: auto;
+            margin-right: 0;
+            position: relative;
+        }
+
+        .accordion-input + .accordion-label-bl + .accordion_content {
+            display: none;
+        }
+
+        .accordion-input:checked + .accordion-label-bl + .accordion_content {
+            display: block;
+        }
+
+        .accordion-input + .accordion-label-item + .accordion_content {
+            display: none;
+        }
+
+        .accordion-input:checked + .accordion-label-item + .accordion_content {
+            display: block;
+        }
+
+        .accordion-input + .accordion-label-re + .accordion_content {
+            display: none;
+        }
+
+        .accordion-input:checked + .accordion-label-re + .accordion_content {
+            display: block;
+        }
+
+        /* Removed 2 from here */
+
+        .div-flex-container {
+            display: inline-flex;
+            width: 100%;
+
+            vertical-align: top;
+        }
+
+        .div-flex-item {
+            padding-top: 5px;
+            padding-left: 5px;
+            width: 100%;
+
+        }
+
+        /* CSS for the table containing the pipeline run details on the summary tab */
+        .pipeline-run-meta-table {
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        .pipeline-run-meta-table td {
+            border: white 1px solid;
+            border-spacing: 0;
+            padding: 3px;
+        }
+
+        /*  Define the background color for all the ODD table columns  */
+        .pipeline-run-meta-table tr td:nth-child(odd) {
+            background: #FFFFFF;
+            font-weight: bold;
+            width: 6em;
+        }
+
+        /*  Define the background color for all the EVEN table columns  */
+        .pipeline-run-meta-table tr td:nth-child(even) {
+            background: #e2e2e2;
+            padding-right: 15px;
+        }
+
+
+        .status-box {
+            /* For this positioning method (position: absolute; right: 10px;) to keep working, the
+            class (.accordion_content) of the parent element must use position: relative; because CSS is stupid. */
+            position: absolute;
+            right: 0;
+            bottom: 0;
+            margin: 0;
+            padding: 0;
+            vertical-align: bottom;
+        }
+
+        .status-box-undone {
+            margin: 0px 0px 0px 0px;
+            color: #ffffff;
+            font-weight: normal;
+            background: var(--failed-test-color, #de4a4a);
+            width: 3em;
+            text-align: center;
+            display: table-cell;
+            vertical-align: bottom;
+            padding-top: 1px;
+            font-size: smaller;
+        }
+
+        .status-box-neutral {
+            margin: 0px 0px 0px 0px;
+            color: #ffffff;
+            font-weight: normal;
+            background: var(--blocked-test-color, #d9d9d9);
+            width: 3em;
+            text-align: center;
+            display: table-cell;
+            padding-bottom: 1px;
+            padding-top: 1px;
+            font-size: smaller;
+            vertical-align: bottom;
+        }
+
+        .status-box-done {
+            margin: 0 0 0 0;
+            display: table-cell;
+            background-color: var(--passed-test-color, #a9cf91);
+            color: #FFFFFF;
+            width: 3em;
+            text-align: center;
+            border-top-right-radius: 5px;
+            border-bottom-right-radius: 5px;
+            padding-bottom: 1px;
+            padding-top: 1px;
+            font-size: smaller;
+            vertical-align: bottom;
+        }
+
+
+        /* Equal width DIVs for the summary page */
+        .div-box {
+            max-width: 100em;
+            margin: 15px 5px 15px 5px;
+            padding-top: 50px;
+            box-sizing: border-box;
+            /*border: #C9C9C9 1px solid;
+            box-shadow: 0px 0px 5px 5px #C9C9C9;
+            -webkit-box-shadow: 2px 2px 5px #C9C9C9;
+            -moz-box-shadow: 2px 2px 5px 5px #C9C9C9;*/
+        }
+
+
+        .div-box h2, .div-flex-container h2, .div-col h2 {
+            font-size: larger;
+            color: #5e6163;
+            width: fit-content;
+            margin-top: -25px;
+            margin-left: 5px;
+            background: white;
+        }
+
+        .req-summary-table {
+            width: 100%;
+            border-collapse: separate;
+            border-spacing: 0px 2px;
+            font-size: smaller;
+            height: 300px;
+            overflow-y: auto;
+            display: block;
+            table-layout: fixed;
+        }
+        .req-summary-table td {
+            border-bottom: #8d8d8d 1px solid;
+            margin: 0 0 0 5px;
+            padding: 0 5px 0 5px;
+            text-align: center;
+        }
+
+        .req-summary-table thead {
+            font-size: small;
+            color: #5e6163;
+            top: 0;
+            position: sticky;
+            background-color: white;
+            border-bottom: #8d8d8d 1px solid;
+        }
+
+        .req-summary-table .req-id {
+            border-bottom: #8d8d8d 1px solid;
+            width: 4em;
+        }
+
+        .req-summary-table .passed {
+            /*background-color: var(--passed-test-color, #a9cf91);*/
+            border-left: #FFFFFF 2px solid;
+            border-right: #FFFFFF 2px solid;
+        }
+
+        .req-summary-table .failed {
+            /*background-color: var(--failed-test-color, #de4a4a);
+            color: #FFFFFF;*/
+            border-left: #FFFFFF 2px solid;
+            border-right: #FFFFFF 2px solid;
+
+        }
+
+        .req-summary-table .blocked {
+            /*background-color: var(--blocked-test-color, #d9d9d9);*/
+            border-left: #FFFFFF 2px solid;
+            border-right: #FFFFFF 2px solid;
+        }
+
+        .req-summary-table .req-title {
+            width: 100%;
+            text-align: left;
+        }
+
+        .progress-table {
+            border-collapse: separate;
+            border-spacing: 0px 5px;
+            width: 100%;
+        }
+
+        .progress-table th {
+            text-align: center;
+            padding-left: 10px;
+            padding-right: 10px;
+            color: #5e6163;
+        }
+
+        .progress-table th:first-child {
+            text-align: left;
+            padding-right: 2px;
+            width: 2em;
+        }
+        .progress-table td {
+            border-bottom: white 1px solid;
+            border-top: white 1px solid;
+            text-align: center;
+            width: 3em;
+            background-color: #d9d9d9;
+        }
+
+        .progress-table td:last-child {
+            border-right: white 1px solid;
+        }
+
+        .progress-table td:first-child{
+            border-left: white 1px solid;
+
+        }
+    #plot {
+      max-height: 400px; /* Adjust the maximum height as per your needs */
+      overflow: hidden;
+
+    }
+
+    #reqs {
+      overflow: auto;
+      max-height: 100%;
+    }
+    </style>

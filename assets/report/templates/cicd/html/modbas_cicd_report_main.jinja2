@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    {% include "modbas_cicd_report_style.jinja2" %}
+    <title>Build {{ pipeline_details.build_run_number }} ({{ pipeline_details.build_run_id }}) Test Report</title>
+</head>
+
+<body>
+
+<div class="tabset">
+    <!-- Summary Tab Button -->
+    <input type="radio" name="tabset" id="summary_tab" aria-controls="summary" checked>
+    <label for="summary_tab">Summary</label>
+
+    <!-- Detailed Results Tab Button -->
+    <input type="radio" name="tabset" id="detailed_results_tab" aria-controls="detailed_results">
+    <label for="detailed_results_tab">Test Scenarios</label>
+
+    <!-- Actual Tab Content -->
+    <div class="tab-panels">
+        <!-- Summary Tab Content -->
+        <section id="summary" class="tab-panel">
+            <div class="div-box">
+                <h2>Pipeline details</h2>
+                <table class="pipeline-run-meta-table">
+                    <tr>
+                        <td>Project</td>
+                        <td>{{ pipeline_details.ado_project }}</td>
+                        <td>Pipeline</td>
+                        <td title="{{ pipeline_details.build_pipeline_id }}">{{ pipeline_details.build_pipeline_name }}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>Build</td>
+                        <td>{{ pipeline_details.build_run_number }} ({{ pipeline_details.build_run_id }})</td>
+                        <td>Branch</td>
+                        <td>{{ pipeline_details.build_source_branch }}</td>
+                    </tr>
+                    <tr>
+                        <td>Initiator</td>
+                        <td title="{{ pipeline_details.requester_id }}">
+                            {{ pipeline_details.requester }} ({{ pipeline_details.build_trigger }})
+                        </td>
+                        <td>Commit</td>
+                        <td>{{ pipeline_details.source_commit }}</td>
+                    </tr>
+                </table>
+                <div class="div-box">
+                    <h2>Feature tests</h2>
+                    <hr>
+                    <div class="div-flex-container">
+                        <div id="plot" class="div-flex-item">
+                            <img src="data:image/png;base64,{{ hist_run_chart }}"/>
+                        </div>
+                        <div id="reqs" class="div-flex-item">
+                            <table class="req-summary-table">
+                                <thead>
+                                <tr>
+                                    <th>SRD</th>
+                                    <th>ID</th>
+                                    <th>Requirement title</th>
+                                    <th>&#9989;</th>
+                                    <th>&#10060;</th>
+                                    <th>&#128679;</th>
+                                </tr>
+                                </thead>
+                                <tbody>
+                                {% for req_id, req_sum in results_summary_per_requirement.items() %}
+                                    <tr>
+                                        <td class="req-id">{{ req_sum['doc_ref'] }}</td>
+                                        <td class="req-id">{{ req_sum['ext_id'] }}</td>
+                                        <td class="req-title">{{ req_sum['title'] }}</td>
+                                        <td class="passed">{{ req_sum['PASSED'] }}</td>
+                                        <td class="passed">{{ req_sum['FAILED'] }}</td>
+                                        <td class="blocked">{{ req_sum['BLOCKED'] }}</td>
+                                    </tr>
+                                {% endfor %}
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="detailed_results" class="tab-panel">
+            {% for suite_id, suite_details in detailed_results.items() %}
+                <!-- Accordion HTML from https://supfort.com/pure-css-accordion-without-javascript -->
+                <input class="accordion-input" type="checkbox" id="{{ suite_details['suite_full_id'] }}" checked/>
+                <label class="accordion-label accordion-label-bl" for="{{ suite_details['suite_full_id'] }}">
+                    <span class="wi-id-box wi-id-box-bl">{{ suite_details['suite_id'] }}</span>
+                    <span class="wi-title-box-bl">{{ suite_details['suite_name'] }}</span>
+                    <span class="status-box">
+                            <span class="status-box-undone">{{ suite_details['FAILED'] }}</span>
+                            <span class="status-box-neutral">{{ suite_details['BLOCKED'] }}</span>
+                            <span class="status-box-done">{{ suite_details['PASSED'] }}</span>
+                        </span>
+                </label>
+                <div class="accordion_content">
+                    {% for tc_id, tc_details in suite_details['test_cases'].items() %}
+
+                        <input class="accordion-input" type="checkbox" id="{{ tc_details['tc_full_id'] }}"/>
+                        <label class="accordion-label accordion-label-re" for="{{ tc_details['tc_full_id'] }}">
+                            <span class="wi-id-box wi-id-box-re">{{ tc_details['tc_id'] }}</span>
+                            <span class="wi-title-box-re">{{ tc_details['tc_title'] }}</span>
+                            <span class="status-box">
+                                        <span class="status-box-undone">{{ tc_details['FAILED'] }}</span>
+                                        <span class="status-box-neutral">{{ tc_details['BLOCKED'] }}</span>
+                                        <span class="status-box-done">{{ tc_details['PASSED'] }}</span>
+                                    </span>
+                        </label>
+                        <div class="accordion_content">
+                            {% for ts_id, ts_details in tc_details['test_steps'].items() %}
+                                <input class="accordion-input" type="checkbox" id="{{ ts_details['ts_full_id'] }}"/>
+                                <label class="accordion-label accordion-label-ri" for="{{ ts_details['ts_full_id'] }}">
+                                    <span class="wi-id-box wi-id-box-ri">{{ ts_details['ts_id'] }}</span>
+                                    <span class="wi-title-box-ri">{{ ts_details['ts_title'] }}</span>
+                                    <span class="status-box">
+                                                <span class="status-box-undone">{{ ts_details['FAILED'] }}</span>
+                                                <span class="status-box-neutral">{{ ts_details['BLOCKED'] }}</span>
+                                                <span class="status-box-done">{{ ts_details['PASSED'] }}</span>
+                                            </span>
+                                </label>
+                            {% endfor %}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endfor %}
+        </section>
+    </div>
+</div>
+
+
+</body>
+</html>

@@ -1,0 +1,904 @@
+{
+	".\\commons\\context.py": [
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 1,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "\"\"\"\n\nThe context module helps with keeping track of the AUT's state, i.e. the test context.\nIt includes functions to identify the current screen and the state of the elements on it, running processes,\nand (hopefully) anything else that might affect the user's available actions.\n\n\"\"\"\n"
+		},
+		{
+			"code": "F401",
+			"filename": ".\\commons\\context.py",
+			"line_number": 11,
+			"column_number": 1,
+			"text": "'datetime.datetime' imported but unused",
+			"physical_line": "from datetime import datetime\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 25,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_context():\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 25,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "def get_context():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 30,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def update_context(ctx_dictionary):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 34,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_test_context():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 39,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_screen():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 44,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_states():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 49,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_elements():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 54,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_routes():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 59,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 64,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 69,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 76,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 76,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 100,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 103,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 103,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 104,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 104,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 104,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 120,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 120,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_run_mode' from line 59",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 125,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 125,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_active_vp' from line 64",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 130,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 130,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_active_vp' from line 69",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 136,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_vp_results' from line 75",
+			"physical_line": "def get_vp_results():\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 137,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 137,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 161,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 161,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_vp_results' from line 100",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 164,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 164,
+			"column_number": 1,
+			"text": "redefinition of unused 'TestRunContext' from line 103",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 164,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 165,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 165,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 165,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 181,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 181,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_run_mode' from line 120",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 186,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 186,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_active_vp' from line 125",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 191,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 191,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_active_vp' from line 130",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 197,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_vp_results' from line 136",
+			"physical_line": "def get_vp_results():\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 198,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 198,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 222,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 222,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_vp_results' from line 161",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 225,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 225,
+			"column_number": 1,
+			"text": "redefinition of unused 'TestRunContext' from line 164",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 225,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 226,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 226,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 226,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 242,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 242,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_run_mode' from line 181",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 247,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 247,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_active_vp' from line 186",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 252,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 252,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_active_vp' from line 191",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 258,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_vp_results' from line 197",
+			"physical_line": "def get_vp_results():\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 259,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 259,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 283,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 283,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_vp_results' from line 222",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 286,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 286,
+			"column_number": 1,
+			"text": "redefinition of unused 'TestRunContext' from line 225",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 286,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 287,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 287,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 287,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 303,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 303,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_run_mode' from line 242",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 308,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 308,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_active_vp' from line 247",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 313,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 313,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_active_vp' from line 252",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 319,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_vp_results' from line 258",
+			"physical_line": "def get_vp_results():\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 320,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 320,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 344,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 344,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_vp_results' from line 283",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 347,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 347,
+			"column_number": 1,
+			"text": "redefinition of unused 'TestRunContext' from line 286",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 347,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 348,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 348,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 348,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 364,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 364,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_run_mode' from line 303",
+			"physical_line": "def get_run_mode():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 369,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 369,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_active_vp' from line 308",
+			"physical_line": "def get_active_vp():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 374,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 374,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_active_vp' from line 313",
+			"physical_line": "def set_active_vp(vp):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 380,
+			"column_number": 1,
+			"text": "redefinition of unused 'get_vp_results' from line 319",
+			"physical_line": "def get_vp_results():\n"
+		},
+		{
+			"code": "D205",
+			"filename": ".\\commons\\context.py",
+			"line_number": 381,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\context.py",
+			"line_number": 381,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "    \"\"\"\n    # For testing only: Initializing the results\n    current_vp_results.vp_id = 9\n    current_vp_results.test_result = 'PASSED'\n    current_vp_results.assertion_time = datetime.now()\n    current_vp_results.test_run_id = 3\n    current_vp_results.test_step_id = 3\n    current_vp_results.test_step_version = None\n    current_vp_results.test_step_instance = None\n    current_vp_results.test_case_id = None\n    current_vp_results.test_case_version = None\n    current_vp_results.test_case_instance = None\n    current_vp_results.test_suite_id = None\n    current_vp_results.test_suite_version = None\n    current_vp_results.session_id = 'supertestsession'\n    current_vp_results.vp_version = 'v.1.0'\n    current_vp_results.ctx_id = 8\n    current_vp_results.vp_dyn_param_val = None\n    current_vp_results.ctx_data = None\n    # END For testing only: Initializing the results\n    \"\"\"\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 405,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 405,
+			"column_number": 1,
+			"text": "redefinition of unused 'set_vp_results' from line 344",
+			"physical_line": "def set_vp_results(vp_results):\n"
+		},
+		{
+			"code": "D101",
+			"filename": ".\\commons\\context.py",
+			"line_number": 408,
+			"column_number": 1,
+			"text": "Missing docstring in public class",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "F811",
+			"filename": ".\\commons\\context.py",
+			"line_number": 408,
+			"column_number": 1,
+			"text": "redefinition of unused 'TestRunContext' from line 347",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "E302",
+			"filename": ".\\commons\\context.py",
+			"line_number": 408,
+			"column_number": 1,
+			"text": "expected 2 blank lines, found 1",
+			"physical_line": "class TestRunContext:\n"
+		},
+		{
+			"code": "D107",
+			"filename": ".\\commons\\context.py",
+			"line_number": 409,
+			"column_number": 1,
+			"text": "Missing docstring in __init__",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 409,
+			"column_number": 39,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "E251",
+			"filename": ".\\commons\\context.py",
+			"line_number": 409,
+			"column_number": 41,
+			"text": "unexpected spaces around keyword / parameter equals",
+			"physical_line": "    def __init__(self, test_session_id = None):\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 425,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def inc_ctx_seq():\n"
+		},
+		{
+			"code": "D103",
+			"filename": ".\\commons\\context.py",
+			"line_number": 430,
+			"column_number": 1,
+			"text": "Missing docstring in public function",
+			"physical_line": "def get_ctx_seq():\n"
+		}
+	],
+	".\\commons\\fields.py": [
+		{
+			"code": "D205",
+			"filename": ".\\commons\\fields.py",
+			"line_number": 1,
+			"column_number": 1,
+			"text": "1 blank line required between summary line and description",
+			"physical_line": "\"\"\"\n\nThe fields module contains functions to help with the verification of parameter values and their graphical\nrepresentation on the GUI.\n\n\"\"\""
+		},
+		{
+			"code": "D400",
+			"filename": ".\\commons\\fields.py",
+			"line_number": 1,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "\"\"\"\n\nThe fields module contains functions to help with the verification of parameter values and their graphical\nrepresentation on the GUI.\n\n\"\"\""
+		},
+		{
+			"code": "W292",
+			"filename": ".\\commons\\fields.py",
+			"line_number": 6,
+			"column_number": 4,
+			"text": "no newline at end of file",
+			"physical_line": "\"\"\"\n\nThe fields module contains functions to help with the verification of parameter values and their graphical\nrepresentation on the GUI.\n\n\"\"\""
+		}
+	],
+	".\\commons\\__init__.py": [
+		{
+			"code": "D400",
+			"filename": ".\\commons\\__init__.py",
+			"line_number": 1,
+			"column_number": 1,
+			"text": "First line should end with a period",
+			"physical_line": "\"\"\"\nThis is the Commons module\n\nDocumentation generated by Sphinx: https://pythonhosted.org/an_example_pypi_project/sphinx.html\n\n\"\"\"\n"
+		}
+	]
+}

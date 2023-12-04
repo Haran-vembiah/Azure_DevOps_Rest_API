@@ -1,0 +1,1 @@
+If you're looking for the first steps after joining the Orion project as a test automation engineer, you're at the right place. Welcome to the team!
