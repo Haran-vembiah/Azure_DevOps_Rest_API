@@ -21,7 +21,7 @@ extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode', 'sphinx_markdown_buil
 versions = ['V1.0', 'v1.1', 'v2.0']
 
 # The short X.Y version.
-versions = ['V1.0', 'v1.1', 'v2.0']
+# versions = ['V1.0', 'v1.1', 'v2.0']
 # The full version, including alpha/beta/rc tags.
 html_context = {
     'versions': versions,
@@ -81,7 +81,7 @@ html_sidebars = {
     '**': [
         # ... other sidebars ...
         # Suggest putting the extension above the search bar for better UX.
-        # 'sidebar/sphinx_versioning.html',
+        'sidebar/sphinx_versioning.html',
         'searchbox.html',
         'globaltoc.html', 'relations.html',
         'sourcelink.html'
