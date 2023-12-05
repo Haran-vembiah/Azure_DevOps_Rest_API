@@ -10,9 +10,9 @@ Welcome to Test automation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   sut_hci
-   tdk
-   tools
+   .\sut_hci
+   .\tdk
+   .\tools
 
 Indices and tables
 ==================

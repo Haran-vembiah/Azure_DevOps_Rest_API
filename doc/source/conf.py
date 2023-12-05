@@ -44,8 +44,8 @@ templates_path = [
 html_sidebars = {
     '**': [
         'versioning.html',
-        'page.html'
-        # 'versions_and_tags.html',
+        # 'page.html',
+        'versions_and_tags.html',
         'searchbox.html',
         'globaltoc.html', 'relations.html',
         'sourcelink.html'
