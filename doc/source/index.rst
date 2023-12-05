@@ -10,7 +10,9 @@ Welcome to Test automation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-
+   sut_hci
+   tdk
+   tools
 
 Indices and tables
 ==================
@@ -18,3 +20,25 @@ Indices and tables
 * :ref:`genindex`
 * :ref:`modindex`
 * :ref:`search`
+
+
+Modules and Packages
+====================
+.. automodule:: sut_hci
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+.. automodule:: tdk
+   :members:
+   :undoc-members:
+   :show-inheritance:
+
+
+.. automodule:: tools
+    :members:
+    :undoc-members:
+    :show-inheritance:
+
+.. automodule:: maths
+    :members:
