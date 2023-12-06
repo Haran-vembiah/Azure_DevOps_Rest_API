@@ -14,32 +14,3 @@ Welcome to Test automation's documentation!
    tools/index
    tdk/index
    maths/index
-
-Indices and tables
-==================
-
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-
-Modules and Packages
-====================
-
-.. automodule:: sut_hci
-   :members:
-
-.. automodule:: sut_hci.dev
-   :members:
-
-.. automodule:: sut_hci.sut
-   :members:
-
-.. automodule:: tdk
-   :members:
-
-.. automodule:: tools
-    :members:
-
-.. automodule:: maths
-    :members:
