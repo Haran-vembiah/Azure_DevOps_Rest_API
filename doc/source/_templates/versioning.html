@@ -1,6 +1,6 @@
 {% if versions %}
 <h3>{{ _('Branches') }}</h3>
-<select id="version-select" onchange="if (this.value) window.location.href=this.value">
+<select id="branch-select" onchange="if (this.value) window.location.href=this.value">
 <!--<select onchange="window.location.href=this.value">-->
   <option selected disabled>Choose a Branch</option> <!-- add a default disabled option -->
   {%- for item in versions.branches %}
@@ -16,3 +16,17 @@
   {%- endfor %}
 </select>
 {% endif %}
+
+<script>
+var branch_dropdown = document.getElementById("branch-select");
+branch_dropdown.onchange = function() {
+  var selectedOption = branch_dropdown.options[branch_dropdown.selectedIndex].text;
+  branch_dropdown.options[0].text = selectedOption;
+}
+var version_dropdown = document.getElementById("version-select");
+version_dropdown.onchange = function() {
+  var selectedOption = version_dropdown.options[version_dropdown.selectedIndex].text;
+  version_dropdown.options[0].text = selectedOption;
+}
+
+</script>
