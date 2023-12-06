@@ -28,6 +28,12 @@ release = 'Orion'
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode','sphinx_versioning','sphinx_multiversion']
 # extensions = ['sphinx_multiversion']
 
+# Only include the latest release in the documentation
+# smv_tag_whitelist = r'^V.*$'
+smv_latest_version = 'latest'
+smv_remote_whitelist = r'^origin/main$'
+# smv_outputdir_format = '{config.release}/{{ref.name}}'
+smv_branch_strategy = 'independent'
 
 # exclude_patterns = []
 
@@ -68,7 +74,7 @@ html_static_path = ['_static']
 
 
 # Whitelist pattern for tags (set to None to ignore all tags)
-smv_tag_whitelist = r'^.*$'
+# smv_tag_whitelist = r'^.*$'
 
 # Whitelist pattern for branches (set to None to ignore all branches)
 # smv_branch_whitelist = r'^.*$'
