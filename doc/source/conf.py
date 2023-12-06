@@ -93,7 +93,7 @@ html_sidebars = {
         'globaltoc.html',
         'relations.html',
         'sourcelink.html',
-        'scv.html'
+        # 'scv.html'
     ],
 }
 
