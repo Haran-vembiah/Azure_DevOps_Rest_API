@@ -10,7 +10,4 @@ Welcome to Test automation's documentation!
    :maxdepth: 4
    :caption: Contents:
 
-   modules/index
-   tools/index
-   tdk/index
-   maths/index
+   modules
