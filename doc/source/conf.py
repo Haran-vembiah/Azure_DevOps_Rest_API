@@ -28,10 +28,33 @@ release = 'Orion'
 extensions = ['sphinx.ext.autodoc', 'sphinx.ext.viewcode','sphinx_versioning','sphinx_multiversion']
 # extensions = ['sphinx_multiversion']
 
+
+# Set up sphinx-multiversion
+smv_tag_whitelist = r'^.*$'
+smv_branch_whitelist = r'^main$'
+smv_remote_whitelist = r'^origin$'
+smv_latest_version = 'main'
+smv_show_banner = True
+smv_versions = [release]
+
+
+# Set up sphinx-versioning
+scv_root_ref = 'main'
+scv_show_banner = True
+scv_sort = ('semver', None)
+scv_whitelist_branches = r'^main$'
+scv_whitelist_tags = r'^v\d+\.\d+\.\d+$'
+scv_greatest_tag = True
+
+
 # Only include the latest release in the documentation
 # smv_tag_whitelist = r'^V.*$'
-smv_latest_version = 'latest'
-smv_remote_whitelist = r'^origin/main$'
+# smv_tag_whitelist = r'^latest$'
+# smv_latest_version = 'latest'
+# smv_fetch_cmd = 'git fetch --tags origin main:main'
+# smv_remote_whitelist = r'^refs/remotes/origin/main$'
+# smv_remote_whitelist = r'^origin/master$'
+# smv_remote_whitelist = 'origin/main'
 # smv_outputdir_format = '{config.release}/{{ref.name}}'
 smv_branch_strategy = 'independent'
 
@@ -51,10 +74,12 @@ html_sidebars = {
     '**': [
         'versioning.html',
         # 'page.html',
-        'versions_and_tags.html',
+        # 'versions_and_tags.html',
         'searchbox.html',
-        'globaltoc.html', 'relations.html',
-        'sourcelink.html'
+        'globaltoc.html',
+        'relations.html',
+        'sourcelink.html',
+        # 'scv.html'
     ],
 }
 
