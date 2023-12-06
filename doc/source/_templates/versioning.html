@@ -1,21 +1,18 @@
 {% if versions %}
 <h3>{{ _('Branches') }}</h3>
-<select onchange="window.location.href=this.value">
+<select id="version-select" onchange="if (this.value) window.location.href=this.value">
+<!--<select onchange="window.location.href=this.value">-->
+  <option selected disabled>Choose a Branch</option> <!-- add a default disabled option -->
   {%- for item in versions.branches %}
   <option value="{{ item.url }}">{{ item.name }}</option>
   {%- endfor %}
 </select>
 <h3>{{ _('Versions') }}</h3>
-<select onchange="window.location.href=this.value">
+<select id="version-select" onchange="if (this.value) window.location.href=this.value">
+<!--<select onchange="window.location.href=this.value">-->
+  <option selected disabled>Choose a version</option> <!-- add a default disabled option -->
   {%- for item in versions.tags %}
   <option value="{{ item.url }}">{{ item.name }}</option>
   {%- endfor %}
 </select>
-<!--<h3>{{ _('Versions') }}</h3>-->
-<!--<ul>-->
-<!--  {%- for item in versions.tags %}-->
-<!--  <li><a href="{{ item.url }}">{{ item.name }}</a></li>-->
-<!--  {%- endfor %}-->
-<!--</ul>-->
 {% endif %}
-
