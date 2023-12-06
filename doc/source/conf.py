@@ -44,9 +44,9 @@ templates_path = [
 html_sidebars = {
     '**': [
         'versioning.html',
-        'sidebar/sphinx_versioning.html',
+        # 'sidebar/sphinx_versioning.html',
         # 'page.html',
-        'versions_and_tags.html',
+        # 'versions_and_tags.html',
         'searchbox.html',
         'globaltoc.html',
         'relations.html',
