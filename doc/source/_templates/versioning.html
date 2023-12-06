@@ -1,10 +1,10 @@
 {% if versions %}
-<!--<h3>{{ _('Releases') }}</h3>-->
-<!--<ul>-->
-<!--  {%- for item in versions.releases %}-->
-<!--  <li><a href="{{ item.url }}">{{ item.name }}</a></li>-->
-<!--  {%- endfor %}-->
-<!--</ul>-->
+<h3>{{ _('Releases') }}</h3>
+<ul>
+  {%- for item in versions.releases %}
+  <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+  {%- endfor %}
+</ul>
 <h3>{{ _('Versions') }}</h3>
 <ul>
   {%- for item in versions.tags %}
