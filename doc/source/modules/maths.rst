@@ -1,7 +1,7 @@
-Module 1
+maths
 =========
 
-This is the content of module 1.
+This is the content of Maths package.
 
 .. automodule:: maths
    :members:

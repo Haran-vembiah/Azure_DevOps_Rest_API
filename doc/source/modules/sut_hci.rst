@@ -1,7 +1,7 @@
-Module 1
+sut_hci
 =========
 
-This is the content of module 1.
+This is the content of sut_hci package.
 
 .. automodule:: sut_hci.dev
    :members:

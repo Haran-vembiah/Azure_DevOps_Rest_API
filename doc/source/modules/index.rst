@@ -4,6 +4,6 @@ Modules
 .. toctree::
    :maxdepth: 2
 
-   module1
-   module2
+   sut_hci
+   maths
    module3
