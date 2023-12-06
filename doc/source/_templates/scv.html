@@ -1,0 +1,14 @@
+{% extends "!navigation.html" %}
+
+{% block relation %}
+    <div class="scv-version">
+        <label for="scv-switcher">Version</label>
+        <select id="scv-switcher">
+            {% for ver in versions %}
+                {% if ver != current_version %}
+                    <option value="{{ ver }}">{{ ver | replace('_', ' ') }}</option>
+                {% endif %}
+            {% endfor %}
+        </select>
+    </div>
+{% endblock %}

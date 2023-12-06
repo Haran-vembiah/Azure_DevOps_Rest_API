@@ -1,0 +1,23 @@
+{% extends "versioning.html" %}
+
+{% block extra_nav %}
+
+{% if versions|length > 1 %}
+  <ul class="nav navbar-nav navbar-right">
+    <li class="dropdown">
+      <a href="#" class="dropdown-toggle" data-toggle="dropdown">Versions <b class="caret"></b></a>
+      <ul class="dropdown-menu">
+        {% for version in versions %}
+          <li{% if version.current %} class="active"{% endif %}><a href="{{ version.url }}">{{ version.label }}</a></li>
+        {% endfor %}
+
+        <!-- Add the tags retrieved from Sphinx-Multiversion to the dropdown -->
+        {% for tag in tags %}
+          <li{% if tag.current %} class="active"{% endif %}><a href="{{ tag.url }}">{{ tag.label }}</a></li>
+        {% endfor %}
+      </ul>
+    </li>
+  </ul>
+{% endif %}
+
+{% endblock %}

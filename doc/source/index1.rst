@@ -7,13 +7,9 @@ Welcome to Test automation's documentation!
 ===========================================
 
 .. toctree::
-   :maxdepth: 4
+   :maxdepth: 2
    :caption: Contents:
 
-   modules/index
-   tools/index
-   tdk/index
-   maths/index
 
 Indices and tables
 ==================
