@@ -10,9 +10,6 @@ Welcome to Test automation's documentation!
    :maxdepth: 2
    :caption: Contents:
 
-   .\sut_hci
-   .\tdk
-   .\tools
 
 Indices and tables
 ==================
@@ -24,21 +21,21 @@ Indices and tables
 
 Modules and Packages
 ====================
+
 .. automodule:: sut_hci
    :members:
-   :undoc-members:
-   :show-inheritance:
+
+.. automodule:: sut_hci.dev
+   :members:
+
+.. automodule:: sut_hci.sut
+   :members:
 
 .. automodule:: tdk
    :members:
-   :undoc-members:
-   :show-inheritance:
-
 
 .. automodule:: tools
     :members:
-    :undoc-members:
-    :show-inheritance:
 
 .. automodule:: maths
     :members:

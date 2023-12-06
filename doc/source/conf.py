@@ -5,9 +5,17 @@
 
 # -- Project information -----------------------------------------------------
 # https://www.sphinx-doc.org/en/master/usage/configuration.html#project-information
-
+import os
+import sys
 import sphinx_multiversion
 
+sys.path.insert(0, os.path.abspath('.'))
+sys.path.insert(0, os.path.abspath('..'))
+sys.path.insert(0, os.path.abspath('../assets'))
+sys.path.insert(0, os.path.abspath('../maths'))
+sys.path.insert(0, os.path.abspath('../sut_hci'))
+sys.path.insert(0, os.path.abspath('../tdk'))
+sys.path.insert(0, os.path.abspath('../tools'))
 
 project = 'Test automation'
 copyright = '2023, Haran'
