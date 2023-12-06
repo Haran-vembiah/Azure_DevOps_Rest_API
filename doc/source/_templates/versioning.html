@@ -1,10 +1,10 @@
 {% if versions %}
 <h3>{{ _('Branches') }}</h3>
-<ul>
+<select onchange="window.location.href=this.value">
   {%- for item in versions.branches %}
-  <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+  <option value="{{ item.url }}">{{ item.name }}</option>
   {%- endfor %}
-</ul>
+</select>
 <h3>{{ _('Versions') }}</h3>
 <select onchange="window.location.href=this.value">
   {%- for item in versions.tags %}
