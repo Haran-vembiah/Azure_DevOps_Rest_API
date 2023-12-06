@@ -6,36 +6,28 @@
 Welcome to Test automation's documentation!
 ===========================================
 
+.. only:: html
+
+   .. include:: /versions.rst
+.. include:: /path/to/versioned.rst
+
+.. sphinx-multiversion
+
+.. currentversion:: master
+
+.. versionwarning::
+
+   This documentation is for an old version of the software. Please see the latest version at https://example.com.
+
+.. automodule:: mymodule
+
 .. toctree::
+
    :maxdepth: 2
-   :caption: Contents:
 
+   maths
+   sut_hci
+   tools
 
-Indices and tables
-==================
+.. tagversions::
 
-* :ref:`genindex`
-* :ref:`modindex`
-* :ref:`search`
-
-
-Modules and Packages
-====================
-
-.. automodule:: sut_hci
-   :members:
-
-.. automodule:: sut_hci.dev
-   :members:
-
-.. automodule:: sut_hci.sut
-   :members:
-
-.. automodule:: tdk
-   :members:
-
-.. automodule:: tools
-    :members:
-
-.. automodule:: maths
-    :members:
