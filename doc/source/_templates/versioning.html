@@ -6,10 +6,16 @@
   {%- endfor %}
 </ul>
 <h3>{{ _('Versions') }}</h3>
-<ul>
+<select onchange="window.location.href=this.value">
   {%- for item in versions.tags %}
-  <li><a href="{{ item.url }}">{{ item.name }}</a></li>
+  <option value="{{ item.url }}">{{ item.name }}</option>
   {%- endfor %}
-</ul>
+</select>
+<!--<h3>{{ _('Versions') }}</h3>-->
+<!--<ul>-->
+<!--  {%- for item in versions.tags %}-->
+<!--  <li><a href="{{ item.url }}">{{ item.name }}</a></li>-->
+<!--  {%- endfor %}-->
+<!--</ul>-->
 {% endif %}
 
