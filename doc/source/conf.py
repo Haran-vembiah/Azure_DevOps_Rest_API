@@ -60,7 +60,7 @@ html_theme_options = {
     "prev_next_buttons_location": "both",
     "style_external_links": True,
     "navigation_depth": 4,
-    "includehidden": True
+    "includehidden": True,
     "titles_only": False,
     "display_version_dropdown": True,
     "version_dropdown_title": "Versions & Tags",
